@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Introduction to Photography",
+    "instructor_name": "John Smith",
+    "available_seats": 15,
+    "price": "99",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Portrait Photography",
+    "instructor_name": "Emily Johnson",
+    "available_seats": 10,
+    "price": "149",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Landscape Photography",
+    "instructor_name": "David Anderson",
+    "available_seats": 12,
+    "price": "129",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Street Photography",
+    "instructor_name": "Sarah Davis",
+    "available_seats": 8,
+    "price": "99",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Product Photography",
+    "instructor_name": "Michael Brown",
+    "available_seats": 10,
+    "price": "149",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Wildlife Photography",
+    "instructor_name": "Jennifer Wilson",
+    "available_seats": 12,
+    "price": "129",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Fashion Photography",
+    "instructor_name": "Alexandra Thompson",
+    "available_seats": 8,
+    "price": "99",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Night Photography",
+    "instructor_name": "Robert Garcia",
+    "available_seats": 10,
+    "price": "149",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Travel Photography",
+    "instructor_name": "Samantha White",
+    "available_seats": 12,
+    "price": "129",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Black and White Photography",
+    "instructor_name": "Daniel Lee",
+    "available_seats": 8,
+    "price": "99",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Sports Photography",
+    "instructor_name": "Matthew Roberts",
+    "available_seats": 15,
+    "price": "119",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Studio Lighting Techniques",
+    "instructor_name": "Sophia Adams",
+    "available_seats": 10,
+    "price": "139",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Food Photography",
+    "instructor_name": "William Baker",
+    "available_seats": 12,
+    "price": "129",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Macro Photography",
+    "instructor_name": "Olivia Walker",
+    "available_seats": 8,
+    "price": "99",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Wedding Photography",
+    "instructor_name": "Christopher Taylor",
+    "available_seats": 10,
+    "price": "179",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  },
+  {
+    "name": "Astrophotography",
+    "instructor_name": "Natalie Clark",
+    "available_seats": 12,
+    "price": "149",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+  }
+]
