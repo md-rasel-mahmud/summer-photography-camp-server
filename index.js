@@ -22,6 +22,8 @@ const client = new MongoClient(uri, {
 });
 
 const classes = client.db('spc').collection('classes')
+const users = client.db('spc').collection('users') 
+const selectedClasses = client.db('spc').collection('selectedClasses') 
 
 async function run() {
   try {
@@ -32,6 +34,27 @@ async function run() {
     app.get('/classes', async (req, res) => {
         const result = await classes.find().toArray()
         res.send(result)
+    })
+
+    // users related apis 
+    app.post('/selected-classes', async (req, res) => {
+      const classes = req.body;
+      const result = await selectedClasses.insertOne(classes);
+      res.send(result)
+    })
+
+    app.post('/user', async(req, res) => {
+      const user = req.body;
+      console.log(user);
+      const existingUser = await users.findOne({ email: user?.email });
+
+      if (existingUser) {
+        return res.send({ message: "user already exist!" });
+      }
+
+      const result = await users.insertOne(user);
+
+      res.send(result);
     })
 
     // Send a ping to confirm a successful connection

@@ -1,114 +1,146 @@
 [
   {
     "name": "Introduction to Photography",
-    "instructor_name": "John Smith",
-    "available_seats": 15,
+    "instructorName": "John Smith",
+    "instructorEmail": "johnsmith@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 15,
     "price": "99",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Portrait Photography",
-    "instructor_name": "Emily Johnson",
-    "available_seats": 10,
+    "instructorName": "Emily Johnson",
+    "instructorEmail": "emilyjohnson@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 10,
     "price": "149",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Landscape Photography",
-    "instructor_name": "David Anderson",
-    "available_seats": 12,
+    "instructorName": "David Anderson",
+    "instructorEmail": "davidanderson@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 12,
     "price": "129",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Street Photography",
-    "instructor_name": "Sarah Davis",
-    "available_seats": 8,
+    "instructorName": "Sarah Davis",
+    "instructorEmail": "sarahdavis@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 8,
     "price": "99",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Product Photography",
-    "instructor_name": "Michael Brown",
-    "available_seats": 10,
+    "instructorName": "Michael Brown",
+    "instructorEmail": "michaelbrown@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 10,
     "price": "149",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Wildlife Photography",
-    "instructor_name": "Jennifer Wilson",
-    "available_seats": 12,
+    "instructorName": "Jennifer Wilson",
+    "instructorEmail": "jenniferwilson@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 12,
     "price": "129",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Fashion Photography",
-    "instructor_name": "Alexandra Thompson",
-    "available_seats": 8,
+    "instructorName": "Alexandra Thompson",
+    "instructorEmail": "alexandrathompson@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 8,
     "price": "99",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Night Photography",
-    "instructor_name": "Robert Garcia",
-    "available_seats": 10,
+    "instructorName": "Robert Garcia",
+    "instructorEmail": "robertgarcia@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 0,
     "price": "149",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Travel Photography",
-    "instructor_name": "Samantha White",
-    "available_seats": 12,
+    "instructorName": "Samantha White",
+    "instructorEmail": "samanthawhite@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 12,
     "price": "129",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Black and White Photography",
-    "instructor_name": "Daniel Lee",
-    "available_seats": 8,
+    "instructorName": "Daniel Lee",
+    "instructorEmail": "daniellee@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 8,
     "price": "99",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Sports Photography",
-    "instructor_name": "Matthew Roberts",
-    "available_seats": 15,
+    "instructorName": "Matthew Roberts",
+    "instructorEmail": "matthewroberts@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 15,
     "price": "119",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Studio Lighting Techniques",
-    "instructor_name": "Sophia Adams",
-    "available_seats": 10,
+    "instructorName": "Sophia Adams",
+    "instructorEmail": "sophiaadams@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 0,
     "price": "139",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Food Photography",
-    "instructor_name": "William Baker",
-    "available_seats": 12,
+    "instructorName": "William Baker",
+    "instructorEmail": "williambaker@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 0,
     "price": "129",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Macro Photography",
-    "instructor_name": "Olivia Walker",
-    "available_seats": 8,
+    "instructorName": "Olivia Walker",
+    "instructorEmail": "oliviawalker@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 8,
     "price": "99",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Wedding Photography",
-    "instructor_name": "Christopher Taylor",
-    "available_seats": 10,
+    "instructorName": "Christopher Taylor",
+    "instructorEmail": "christophertaylor@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 10,
     "price": "179",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   },
   {
     "name": "Astrophotography",
-    "instructor_name": "Natalie Clark",
-    "available_seats": 12,
+    "instructorName": "Natalie Clark",
+    "instructorEmail": "natalieclark@mail.com",
+    "instructorImg": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/Kevin-Teaching-in-Chiang-Mai.jpg?resize=1500%2C1126&ssl=1",
+    "availableSeats": 12,
     "price": "149",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Street_photography_sample.jpg/1024px-Street_photography_sample.jpg"
+    "classImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA8IVuGZHCaY9xMsX6iXi-jAqioso-MPxerU2fy9krWOOhhkhNLVWEa-KKIWUa_PAu-Q&usqp=CAU"
   }
 ]
