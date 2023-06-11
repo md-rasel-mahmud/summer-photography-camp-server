@@ -47,11 +47,11 @@ async function run() {
       const result = await selectedClasses.find({ email }).toArray();
       res.send(result);
     });
-    app.delete('/selected-classes', async (req, res) => {
+    app.delete("/selected-classes", async (req, res) => {
       const id = req.query.id;
-      const result = await selectedClasses.deleteOne({ _id: new ObjectId(id) })
+      const result = await selectedClasses.deleteOne({ _id: new ObjectId(id) });
       res.send(result);
-    })
+    });
 
     //user related apis
     app.post("/user", async (req, res) => {
@@ -63,6 +63,20 @@ async function run() {
         return res.send({ message: "user already exist!" });
       }
       const result = await users.insertOne(user);
+      res.send(result);
+    });
+    app.get("/user", async (req, res) => {
+      const userEmail = req.query.email;
+
+      if (!userEmail) {
+        const result = await users.find().toArray();
+        return res.send(result);
+      }
+      
+      const result = await users.findOne({ email: userEmail });
+      if (result == null) {
+        return res.send({ message: "user not found!" });
+      }
       res.send(result);
     });
 
