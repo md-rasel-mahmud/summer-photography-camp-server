@@ -35,6 +35,12 @@ async function run() {
       const result = await classes.find().toArray();
       res.send(result);
     });
+    app.put('/classes/:id', async (req, res) => {
+      const id = req.params.id;
+      const data = req.body; 
+      const result = await classes.updateOne({ _id: new ObjectId(id) }, { $set: data }, {upsert: true });
+      res.send(result); 
+    })
 
     // selected class related apis
     app.post("/selected-classes", async (req, res) => {
@@ -80,7 +86,6 @@ async function run() {
       res.send(result);
     });
     app.put("/user", async (req, res) => {
-      // get id from query and update user role in user collection
       const id = req.query.id;
       const user = req.body;
       const result = await users.updateOne(
