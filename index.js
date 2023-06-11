@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
 
@@ -36,7 +36,7 @@ async function run() {
       res.send(result);
     });
 
-    // users related apis
+    // selected class related apis
     app.post("/selected-classes", async (req, res) => {
       const classes = req.body;
       const result = await selectedClasses.insertOne(classes);
@@ -47,17 +47,22 @@ async function run() {
       const result = await selectedClasses.find({ email }).toArray();
       res.send(result);
     });
+    app.delete('/selected-classes', async (req, res) => {
+      const id = req.query.id;
+      const result = await selectedClasses.deleteOne({ _id: new ObjectId(id) })
+      res.send(result);
+    })
+
+    //user related apis
     app.post("/user", async (req, res) => {
       const user = req.body;
-      console.log(user);
+
       const existingUser = await users.findOne({ email: user?.email });
 
       if (existingUser) {
         return res.send({ message: "user already exist!" });
       }
-
       const result = await users.insertOne(user);
-
       res.send(result);
     });
 
