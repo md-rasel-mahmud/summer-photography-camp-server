@@ -33,14 +33,31 @@ async function run() {
     // classes related apis
     app.get("/classes", async (req, res) => {
       const result = await classes.find().toArray();
+      const email = req.query.email;
+      if (email) {
+        const emailFilter = await classes.find({ instructorEmail: email }).toArray();
+        if (emailFilter.length == 0 ) {
+          return res.send({message: 'invalid email address'})
+        }
+        return res.send(emailFilter);
+      } 
       res.send(result);
     });
-    app.put('/classes/:id', async (req, res) => {
+    app.put("/classes/:id", async (req, res) => {
       const id = req.params.id;
-      const data = req.body; 
-      const result = await classes.updateOne({ _id: new ObjectId(id) }, { $set: data }, {upsert: true });
-      res.send(result); 
-    })
+      const data = req.body;
+      const result = await classes.updateOne(
+        { _id: new ObjectId(id) },
+        { $set: data },
+        { upsert: true }
+      );
+      res.send(result);
+    });
+    app.post("/classes", async (req, res) => {
+      const classData = req.body;
+      const result = await classes.insertOne(classData);
+      res.send(result);
+    });
 
     // selected class related apis
     app.post("/selected-classes", async (req, res) => {
