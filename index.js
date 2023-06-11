@@ -72,15 +72,24 @@ async function run() {
         const result = await users.find().toArray();
         return res.send(result);
       }
-      
+
       const result = await users.findOne({ email: userEmail });
       if (result == null) {
         return res.send({ message: "user not found!" });
       }
       res.send(result);
     });
-
-    // Send a ping to confirm a successful connection
+    app.put("/user", async (req, res) => {
+      // get id from query and update user role in user collection
+      const id = req.query.id;
+      const user = req.body;
+      const result = await users.updateOne(
+        { _id: new ObjectId(id) },
+        { $set: user },
+        { upsert: true }
+      );
+      res.send(result);
+    });
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
