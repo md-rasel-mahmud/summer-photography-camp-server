@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
 const stripe = require("stripe")(process.env.PAYMENT_SECRET_SK);
 require("dotenv").config();
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
@@ -9,6 +10,26 @@ const port = process.env.PORT || 4000;
 // middleware
 app.use(cors());
 app.use(express.json());
+
+//verify jwt
+const verifyJwt = (req, res, next) => {
+  const authorization = req.headers.authorization;
+  // console.log(authorization);
+  if (!authorization) {
+    return res.status(401).send({ error: true, message: "unauthorize token" });
+  }
+
+  // token verify
+  const token = authorization.split(" ")[1];
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(403).send({ error: true, message: "Forbidden Access" });
+    }
+    // console.log(decoded);
+    req.decoded = decoded;
+    next();
+  });
+};
 
 // mongodb connection
 const uri = process.env.MONGODB_URI;
@@ -22,14 +43,15 @@ const client = new MongoClient(uri, {
   },
 });
 
-const classes = client.db("spc").collection("classes");
-const users = client.db("spc").collection("users");
-const selectedClasses = client.db("spc").collection("selectedClasses");
-
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
+
+    const classes = client.db("spc").collection("classes");
+    const users = client.db("spc").collection("users");
+    const selectedClasses = client.db("spc").collection("selectedClasses");
+
 
     // classes related apis
     app.get("/classes", async (req, res) => {
@@ -119,12 +141,18 @@ async function run() {
     // create payment intent
     app.post("/create-payment-intent", async (req, res) => {
       const { price } = req.body;
-      const amount = price * 100;
+      const amount = parseFloat(price) * 100;
+      console.log(amount);
+
+      // Create a PaymentIntent with the order amount and currency
       const paymentIntent = await stripe.paymentIntents.create({
         amount: amount,
         currency: "usd",
-        payment_method_types: ["card"],
+        automatic_payment_methods: {
+          enabled: true,
+        },
       });
+
       res.send({
         clientSecret: paymentIntent.client_secret,
       });
