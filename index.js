@@ -53,6 +53,18 @@ async function run() {
     const selectedClasses = client.db("spc").collection("selectedClasses");
 
 
+    // generate json token
+    app.post("/jwt", (req, res) => {
+      const email = req.body;
+
+      const token = jwt.sign(email, process.env.JWT_SECRET, {
+        expiresIn: "1h",
+      });
+
+      // console.log(token);
+      res.send({ token });
+    });
+
     // classes related apis
     app.get("/classes", async (req, res) => {
       const result = await classes.find().toArray();
@@ -139,7 +151,7 @@ async function run() {
     });
 
     // create payment intent
-    app.post("/create-payment-intent", async (req, res) => {
+    app.post("/create-payment-intent", verifyJwt, async (req, res) => {
       const { price } = req.body;
       const amount = parseFloat(price) * 100;
       console.log(amount);
