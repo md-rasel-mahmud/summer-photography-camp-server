@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
+const stripe = require("stripe")(process.env.PAYMENT_SECRET_SK);
 require("dotenv").config();
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.PORT || 4000;
 
 // middleware
@@ -35,12 +36,14 @@ async function run() {
       const result = await classes.find().toArray();
       const email = req.query.email;
       if (email) {
-        const emailFilter = await classes.find({ instructorEmail: email }).toArray();
-        if (emailFilter.length == 0 ) {
-          return res.send({message: 'invalid email address'})
+        const emailFilter = await classes
+          .find({ instructorEmail: email })
+          .toArray();
+        if (emailFilter.length == 0) {
+          return res.send({ message: "invalid email address" });
         }
         return res.send(emailFilter);
-      } 
+      }
       res.send(result);
     });
     app.put("/classes/:id", async (req, res) => {
@@ -112,6 +115,21 @@ async function run() {
       );
       res.send(result);
     });
+
+    // create payment intent
+    app.post("/create-payment-intent", async (req, res) => {
+      const { price } = req.body;
+      const amount = price * 100;
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: amount,
+        currency: "usd",
+        payment_method_types: ["card"],
+      });
+      res.send({
+        clientSecret: paymentIntent.client_secret,
+      });
+    });
+
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
