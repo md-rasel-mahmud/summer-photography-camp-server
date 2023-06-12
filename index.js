@@ -58,11 +58,6 @@ async function run() {
       const result = await classes.insertOne(classData);
       res.send(result);
     });
-    app.delete("/classes/:id", async (req, res) => {
-      const id = req.params.id;
-      const result = await classes.deleteOne({ _id: new ObjectId(id) })
-      res.send(result);
-    })
 
     // selected class related apis
     app.post("/selected-classes", async (req, res) => {
