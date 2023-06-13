@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
+require("dotenv").config();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const stripe = require("stripe")(process.env.PAYMENT_SECRET_SK);
-require("dotenv").config();
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.PORT || 4000;
 
@@ -51,7 +51,7 @@ async function run() {
     const classes = client.db("spc").collection("classes");
     const users = client.db("spc").collection("users");
     const selectedClasses = client.db("spc").collection("selectedClasses");
-
+    const enrolledClass = client.db("spc").collection("enrolledClass");
 
     // generate json token
     app.post("/jwt", (req, res) => {
@@ -95,6 +95,13 @@ async function run() {
       const result = await classes.insertOne(classData);
       res.send(result);
     });
+    app.patch("/classes/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const updateDoc = { $inc: { availableSeats: -1, enrolledStudents: 1 } };
+      const result = await classes.updateOne(query, updateDoc);
+      res.send(result);
+    });
 
     // selected class related apis
     app.post("/selected-classes", async (req, res) => {
@@ -102,14 +109,23 @@ async function run() {
       const result = await selectedClasses.insertOne(classes);
       res.send(result);
     });
-    app.get("/selected-classes", async (req, res) => {
+    app.get("/selected-classes", verifyJwt, async (req, res) => {
       const email = req.query.email;
       const result = await selectedClasses.find({ email }).toArray();
       res.send(result);
     });
-    app.delete("/selected-classes", async (req, res) => {
+    app.delete("/selected-classes", verifyJwt, async (req, res) => {
       const id = req.query.id;
-      const result = await selectedClasses.deleteOne({ _id: new ObjectId(id) });
+      const result = await selectedClasses.deleteOne({
+        _id: new ObjectId(id),
+      });
+      return res.send(result);
+    });
+
+    //enrolled class
+    app.post("/enrolled-class", verifyJwt, async (req, res) => {
+      const enrollClass = req.body;
+      const result = await classes.insertOne(enrollClass);
       res.send(result);
     });
 
@@ -154,7 +170,6 @@ async function run() {
     app.post("/create-payment-intent", verifyJwt, async (req, res) => {
       const { price } = req.body;
       const amount = parseFloat(price) * 100;
-      console.log(amount);
 
       // Create a PaymentIntent with the order amount and currency
       const paymentIntent = await stripe.paymentIntents.create({
@@ -164,7 +179,6 @@ async function run() {
           enabled: true,
         },
       });
-
       res.send({
         clientSecret: paymentIntent.client_secret,
       });
