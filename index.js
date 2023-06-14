@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
-require("dotenv").config();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 const stripe = require("stripe")(process.env.PAYMENT_SECRET_SK);
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.PORT || 4000;
@@ -53,7 +53,7 @@ async function run() {
     const selectedClasses = client.db("spc").collection("selectedClasses");
     const enrolledClass = client.db("spc").collection("enrolledClass");
 
-    // generate json token
+    // generate json web token
     app.post("/jwt", (req, res) => {
       const email = req.body;
 
@@ -104,7 +104,7 @@ async function run() {
     });
 
     // selected class related apis
-    app.post("/selected-classes", async (req, res) => {
+    app.post("/selected-classes",verifyJwt, async (req, res) => {
       const classes = req.body;
       const result = await selectedClasses.insertOne(classes);
       res.send(result);
@@ -125,12 +125,21 @@ async function run() {
     //enrolled class
     app.post("/enrolled-class", verifyJwt, async (req, res) => {
       const enrollClass = req.body;
-      const result = await classes.insertOne(enrollClass);
+      enrollClass.enrolledAt = new Date();
+      const result = await enrolledClass.insertOne(enrollClass);
+      res.send(result);
+    });
+    app.get("/enrolled-classes",verifyJwt, async (req, res) => {
+      const email = req.query.email;
+      const result = await enrolledClass
+        .find({ email })
+        .sort({ enrolledAt: -1 })
+        .toArray();
       res.send(result);
     });
 
     //user related apis
-    app.post("/user", async (req, res) => {
+    app.post("/user",verifyJwt, async (req, res) => {
       const user = req.body;
 
       const existingUser = await users.findOne({ email: user?.email });
@@ -141,7 +150,7 @@ async function run() {
       const result = await users.insertOne(user);
       res.send(result);
     });
-    app.get("/user", async (req, res) => {
+    app.get("/user", verifyJwt, async (req, res) => {
       const userEmail = req.query.email;
 
       if (!userEmail) {
@@ -155,7 +164,7 @@ async function run() {
       }
       res.send(result);
     });
-    app.put("/user", async (req, res) => {
+    app.put("/user",verifyJwt, async (req, res) => {
       const id = req.query.id;
       const user = req.body;
       const result = await users.updateOne(
